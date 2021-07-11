@@ -61,8 +61,8 @@ function longestWord(key, parm) {
 }
 
 
-// --- SimpleAdding ---
-function SimpleAdding(key, parm) {
+// --- simpleAdding ---
+function simpleAdding(key, parm) {
     if (key.keyCode == 13 && parm.value.length > 0) {
         parm.parentNode.querySelector("p.text").innerHTML = initFunc(Number(parm.value));
     }
