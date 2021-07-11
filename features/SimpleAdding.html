@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p id="text" style="font-size: 40px; text-align: center;">xxx</p>
+    <div style="width: 100px; margin: 0 auto;">
+        <input id="input" style="width: 100%;" type="number" min="1" max="1000" onkeypress="return init(event)">
+    </div>
+    <script>
+        function SimpleAdding(parm) {
+            if (parm === 1){
+                return 1;
+            } else {
+                return parm + SimpleAdding(parm - 1);
+            }
+        }
+
+        function init(e) {
+            if (e.keyCode == 13) {
+                if(document.querySelector("#input").value >= Number(document.querySelector("#input").min) && document.querySelector("#input").value <= Number(document.querySelector("#input").max)){
+                document.querySelector("#text").innerHTML = SimpleAdding(Number(document.querySelector("#input").value));
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

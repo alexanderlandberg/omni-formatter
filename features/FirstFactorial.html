@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="text" style="font-size: 40px; text-align: center;">xxx</p>
+    <div style="width: 100px; margin: 0 auto;">
+        <input id="input" style="width: 100%;" type="text">
+        <p id="run" style="text-align: center; background-color:#e3e3e3; padding: 10px;" onclick="init()">Run</p>
+    </div>
+    <script>
+        function firstFactorial(num) {
+            if (num === 0 || num === 1) {
+                return 1;
+            } else {
+                return num * firstFactorial(num - 1);
+            }
+        }
+
+        function init(e) {
+            document.querySelector("#text").innerHTML = firstFactorial(document.querySelector("#input").value);
+        }
+    </script>
+</body>
+
+</html>
