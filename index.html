@@ -49,71 +49,32 @@
 </head>
 
 <body>
-    <div id="box1">
-        <p>!</p>
-        <p class="text">xxx</p>
-        <input class="input" type="number" min="1" max="20" onkeypress="return init1(event)" placeholder="Write a number 1-20">
-    </div>
-    <div id="box2">
+    <div>
         <p>Mocking</p>
         <p class="text">xxx</p>
-        <input class="input" onkeypress="return init2(event)" placeholder="Write text">
+        <input class="input" onkeypress="return mockingSpongebob(event, this)" placeholder="Write text">
     </div>
-    <div id="box3">
+    <div>
         <p>Reverse</p>
         <p class="text">xxx</p>
-        <input class="input" onkeypress="return init3(event)" placeholder="Write text">
+        <input class="input" onkeypress="return reverseSentence(event, this)" placeholder="Write text">
     </div>
-    <div id="box4">
-        <p>Reverse</p>
+    <div>
+        <p>Longest word</p>
         <p class="text">xxx</p>
-        <input class="input" onkeypress="return init4(event)" placeholder="Write text">
+        <input class="input" onkeypress="return longestWord(event, this)" placeholder="Write text">
     </div>
-    <script>
-        function firstFactorial(num) {
-            if (num === 0 || num === 1) {
-                return 1;
-            } else {
-                return num * firstFactorial(num - 1);
-            }
-        }
-
-        function init1(e) {
-            if (e.keyCode == 13) {
-                document.querySelector("#box1 .text").innerHTML = firstFactorial(document.querySelector("#box1 .input").value);
-            }
-        }
-        
-        function mockingSpongebob(parm) {
-            let spongebob = [];
-            for (let i = 0; i < parm.length; i++) {
-                if (Math.random() > 0.5) {
-                    spongebob.push(parm.charAt(i).toUpperCase());
-                } else {
-                    spongebob.push(parm.charAt(i).toLowerCase());
-                }
-            }
-            return spongebob.join("");
-        }
-
-        function init2(e) {
-            if (e.keyCode == 13) {
-                document.querySelector("#box2 .text").innerHTML = mockingSpongebob(document.querySelector(
-                    "#box2 .input").value);
-            }
-        }
-        
-        function reverseSentence(parm) {
-            return parm.split("").reverse().join().replace(/,/g, '');;
-        }
-
-        function init3(e) {
-            if (e.keyCode == 13) {
-                document.querySelector("#box3 .text").innerHTML = reverseSentence(document.querySelector("#box3 .input")
-                    .value);
-            }
-        }
-    </script>
+    <div>
+        <p>1 + 2 + ... + N</p>
+        <p class="text">xxx</p>
+        <input class="input" type="number" min="1" max="1000" onkeypress="return SimpleAdding(event, this)" placeholder="Write number">
+    </div>
+    <div>
+        <p>!</p>
+        <p class="text">xxx</p>
+        <input class="input" type="number" min="1" max="20" onkeypress="return firstFactorial(event, this)" placeholder="Write a number 1-20">
+    </div>
+    <script src="/script/modules.js"></script>
 </body>
 
 </html>
